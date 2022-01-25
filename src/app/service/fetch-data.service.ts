@@ -18,17 +18,17 @@ export class FetchDataService {
   constructor(private store: Store<{ status: statusState }>) {}
 
   async fetchUser() {
-    const res = await axios.get('http://127.0.0.1:8000/api/users')
+    const res = await axios.get('https://angular-laravel-chat.herokuapp.com/api/users')
     const data = res.data
     this.userSubject.next(data)
   }
   async fetchRoom() {
-    const res = await axios.get('http://127.0.0.1:8000/api/rooms')
+    const res = await axios.get('https://angular-laravel-chat.herokuapp.com/api/rooms')
     this.roomSubject.next(res.data)
     // setTimeout(()=>this.fetchRoom(),3000)
   }
   async fetchChat() {
-    const res = await axios.get('http://127.0.0.1:8000/api/chats')
+    const res = await axios.get('https://angular-laravel-chat.herokuapp.com/api/chats')
     const data = res.data
     this.chatSubject.next(data)
     setTimeout(()=>this.fetchChat(),3000)

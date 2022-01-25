@@ -83,7 +83,7 @@ export class DetailComponent implements OnInit {
   }
 
   async postRooms(member: User) {
-    await axios.post('http://127.0.0.1:8000/api/rooms', {
+    await axios.post('https://angular-laravel-chat.herokuapp.com/api/rooms', {
       rid: this.room![0].rid,
       name: this.room![0].name,
       member: member.id,

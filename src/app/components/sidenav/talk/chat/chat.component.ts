@@ -58,7 +58,7 @@ export class ChatComponent implements OnInit {
 
   async postChat() {
     if (this.text !== '') {
-      await axios.post('http://127.0.0.1:8000/api/chats', {
+      await axios.post('https://angular-laravel-chat.herokuapp.com/api/chats', {
         sentence: this.text,
         messanger: this.loginUserId,
         room: this.roomId
@@ -71,7 +71,7 @@ export class ChatComponent implements OnInit {
   async delChat(id:number) {
     let result = window.confirm('削除してよろしいですか？')
     if (result) {
-      await axios.delete(`http://127.0.0.1:8000/api/chats/${id}`)
+      await axios.delete(`https://angular-laravel-chat.herokuapp.com/api/chats/${id}`)
       this.fd.fetchChat()
     }
   }

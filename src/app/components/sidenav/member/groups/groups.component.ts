@@ -83,7 +83,7 @@ export class GroupsComponent implements OnInit {
 
   async addRoom() {
     // 1回postしてroom.rid生成する必要あり
-    await axios.post('http://127.0.0.1:8000/api/rooms', {
+    await axios.post('https://angular-laravel-chat.herokuapp.com/api/rooms', {
       name: this.roomName,
       member: this.loginUserId
     }).then((res) => {
@@ -95,7 +95,7 @@ export class GroupsComponent implements OnInit {
   }
   
   async addMember(room: Room, member: User) {
-    await axios.post('http://127.0.0.1:8000/api/rooms', {
+    await axios.post('https://angular-laravel-chat.herokuapp.com/api/rooms', {
       rid: room!.rid,
       name: this.roomName,
       member: member.id

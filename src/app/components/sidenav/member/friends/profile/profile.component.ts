@@ -68,7 +68,7 @@ export class ProfileComponent implements OnInit {
   }
 
   async newRoom() {
-    await axios.post('http://127.0.0.1:8000/api/rooms', {
+    await axios.post('https://angular-laravel-chat.herokuapp.com/api/rooms', {
       member: this.loginUserId
     }).then((res) => {
       this.addMember(res.data)
@@ -76,7 +76,7 @@ export class ProfileComponent implements OnInit {
     })
   }
   async addMember(room:Room) {
-    await axios.post('http://127.0.0.1:8000/api/rooms', {
+    await axios.post('https://angular-laravel-chat.herokuapp.com/api/rooms', {
       rid:room.rid,
       member: this.userId
     })

@@ -70,7 +70,7 @@ export class SignupComponent implements OnInit {
   }
 
   async addUser() {
-    await axios.post('http://127.0.0.1:8000/api/users', {
+    await axios.post('https://angular-laravel-chat.herokuapp.com/api/users', {
       name: this.name,
       email: this.email,
       password: this.password
