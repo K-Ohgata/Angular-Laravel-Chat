@@ -1,0 +1,32 @@
+<div class="parent">
+  <div class="head"></div>
+  <mat-list>
+    <mat-list-item [class.selected]="(parentStatus|async) === 1">
+      <!-- [class.selected]は条件式がtrueの時、selectedというclassを付与する -->
+      <div (click)="changeParentTo1()">
+        <mat-icon>group</mat-icon>
+        <span>メンバー</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item  [class.selected]="(parentStatus|async) === 0">
+      <div (click)="changeParentTo0()">
+        <mat-icon>chat</mat-icon>
+        <span>トーク</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+
+<div class="child">
+  <!-- ifで条件分岐 -->
+  <app-member *ngIf="(parentStatus|async) !== 0"></app-member>
+  <app-talk *ngIf="(parentStatus|async) === 0"></app-talk>
+</div>
+<div class="grandchild">
+  <!-- ifで条件分岐 -->
+  <app-profile *ngIf="(parentStatus|async) !== 0 && (grandStatus|async) === 0"></app-profile>
+  <app-detail *ngIf="(parentStatus|async) !== 0 && (grandStatus|async) !== 0"></app-detail>
+  <app-chat *ngIf="(parentStatus|async) === 0"></app-chat>
+</div>

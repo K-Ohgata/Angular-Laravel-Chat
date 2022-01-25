@@ -1,0 +1,5 @@
+  <button (click)="onNoClick()">キャンセル</button>
+  <button (click)="onClick()">追加</button>
+    <div *ngFor="let people of data.member">
+      <label><input type="checkbox" (change)="addMemberList(people)"/>{{people.name}}</label>
+    </div>

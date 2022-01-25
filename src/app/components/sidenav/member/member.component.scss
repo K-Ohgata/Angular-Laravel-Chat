@@ -1,0 +1,20 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch {
+  border: 1px solid;
+  border-radius: 3px;
+  p {
+    margin: 0;
+    padding: 8px;
+    height: 100%;
+  }
+}
+
+.selected {
+  background-color: rgb(2, 2, 73);
+  color: white;
+}

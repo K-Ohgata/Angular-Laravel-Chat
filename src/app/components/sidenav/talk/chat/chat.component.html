@@ -1,0 +1,59 @@
+<div class="head">
+  {{roomName}}
+</div>
+
+<div class="displayChat">
+  <div *ngFor="let chat of chats">
+    <!--②左コメント始-->
+    <div *ngIf="chat.messanger !== loginUserId">
+      <div class="balloon">
+        <div class="faceicon">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+        <div class="info">
+          <div>{{chat.userName}}</div>
+          <div class="chatting">
+            <div class="says">{{chat.sentence}}</div>
+            <div class="time">
+              <p>
+                {{chat.created_at | date:"yy/MM/dd"}} <br>
+                {{chat.created_at | date:"HH:mm"}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--②/左コメント終-->
+    </div>
+
+    <!--③右コメント始-->
+    <div *ngIf="chat.messanger === loginUserId">
+      <div class="myChat">
+        <div class="myInfo">
+          <div class="myName">{{chat.userName}}</div>
+          <div class="myChatting">
+            <div class="button" (click)="delChat(chat.id)">削除</div>
+            <div class="time">
+              <p>
+                {{chat.created_at | date:"yy/MM/dd"}} <br>
+                {{chat.created_at | date:"HH:mm"}}
+              </p>
+            </div>
+            <div class="mycomment">
+              <p>{{chat.sentence}}</p>
+            </div>
+          </div>
+        </div>
+        <!--/③右コメント終-->
+        <div class="myicon">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="roomId" class="inputTalk">
+  <textarea rows="8" cols="120" placeholder="cmd+enterで送信" [(ngModel)]="text" (keydown.meta.Enter)="postChat()"></textarea>
+  <div><button (click)="postChat()" mat-raised-button color="primary">送信</button></div>
+</div>

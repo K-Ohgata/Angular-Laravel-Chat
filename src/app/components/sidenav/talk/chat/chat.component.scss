@@ -1,0 +1,174 @@
+.displayChat {
+  height: 500px;
+  overflow: auto;
+}
+
+.balloon {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+  padding-left: 20px;
+  .info {
+    float: left;
+  }
+  .faceicon {
+    float: left;
+    width: 40px;
+  }
+  .chatting {
+    width: 100%;
+    text-align: left;
+  }
+  .time {
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 10px;
+    p {
+      line-height: 1;
+    }
+  }
+}
+
+mat-icon {
+  height: auto;
+  font-size: 30px;
+}
+
+.says {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+  word-wrap: break-word;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    left: -19px;
+    border: 8px solid transparent;
+    border-right: 18px solid #edf1ee;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+  }
+}
+
+/*以下、③右側の緑コメント*/
+.myChat {
+  display: flex;
+  justify-content: right;
+  text-align: right;
+  margin: 10px 0;
+  padding-right: 30px;
+  .button {
+    display: flex;
+    align-items: flex-end;
+    margin: 20px 5px 0 0;
+    // padding: 5px 0 0 0;
+    font-size: 10px;
+    text-decoration: underline;
+    // bottom: 0; /*下に固定*/
+    &:hover {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+  .time {
+    display: flex;
+    align-items: flex-end;
+    float: left;
+    // margin-top: 15px;
+    margin-right: 5px;
+    font-size: 10px;
+    p {
+      line-height: 1;
+      margin: 0;
+    }
+  }
+}
+
+.myInfo {
+  float: left;
+}
+.myName {
+  padding-right: 15px;
+}
+.myChatting {
+  display: flex;
+}
+
+.mycomment {
+  position: relative;
+  float: left;
+  margin: 0;
+  max-width: 250px;
+  border-radius: 12px;
+  p {
+    color: white;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    margin: 0 10px 0 0;
+    padding: 8px;
+    max-width: 220px;
+    border-radius: 12px;
+    background: blue;
+    font-size: 15px;
+    word-wrap: break-word;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: -19px;
+      border: 8px solid transparent;
+      border-left: 18px solid blue;
+      -webkit-transform: rotate(-35deg);
+      transform: rotate(-35deg);
+    }
+  }
+}
+
+.myicon {
+  float: right;
+  width: 20px;
+  padding-top: 5px;
+}
+
+.inputTalk {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 27.5%;
+  position: absolute; /*←絶対位置*/
+  padding: 10px 0;
+  border-top: 3px solid rgb(197, 196, 196);
+  bottom: 0; /*下に固定*/
+  background: white;
+  textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 95%;
+    height: 80%;
+  }
+  button {
+    position: absolute; /*←絶対位置*/
+    bottom: 3px; /*下に固定*/
+    right: 20px;
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: larger;
+}

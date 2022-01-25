@@ -1,0 +1,9 @@
+<!-- ifで条件分岐 -->
+<div class="head">
+  <div class="switch">
+    <p (click)="changeGrandTo0()" [class.selected]="(grandStatus|async) === 0">メンバー</p>
+    <p (click)="changeGrandTo1()" [class.selected]="(grandStatus|async) !== 0">グループ</p>
+  </div>
+</div>
+<app-friends *ngIf="(grandStatus|async) === 0"></app-friends>
+<app-groups *ngIf="(grandStatus|async) !== 0"></app-groups>

@@ -1,0 +1,38 @@
+.head {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: larger;
+}
+
+.right-container {
+  padding: 50px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  .user {
+    display: flex;
+    margin: 0 0 20px 0;
+    mat-icon {
+      width: 120px;
+      height: 120px;
+      font-size: 120px;
+    }
+    div {
+      font-size: 30px;
+      align-items: center;
+      margin: auto 25px;
+    }
+  }
+  button {
+    width: 18%;
+  }
+  .email {
+    margin:20px 0;
+    p{
+      color:rgb(176,176,176);
+      margin:0 0 5px;
+    }
+    border-bottom: 1px solid rgb(176,176,176);
+  }
+}

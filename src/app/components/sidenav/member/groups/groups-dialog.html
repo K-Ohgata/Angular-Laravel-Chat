@@ -1,0 +1,13 @@
+<!-- room名 -->
+ <input type="text" placeholder="ルーム名" [(ngModel)]="returnData.roomName" />
+<!-- member -->
+<div *ngFor="let people of data.member">
+  <label><input type="checkbox" (change)="addMemberList(people)" />{{people.name}}</label>
+</div>
+
+<div mat-dialog-actions>
+  <!-- キャンセルボタン -->
+  <button mat-button (click)="onNoClick()">キャンセル</button>
+  <!-- 作成ボタン -->
+  <button mat-button (click)="onClick()" cdkFocusInitial>作成</button>
+</div>

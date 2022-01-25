@@ -1,0 +1,20 @@
+<div class="head">
+  プロフィール
+</div>
+
+<div *ngIf="userId" class="right-container">
+  <div class="user">
+    <mat-icon>account_circle</mat-icon>
+    <div>{{user![0].name}}</div>
+  </div>
+  <div class="button">
+    <button mat-stroked-button color="primary" (click)="jumpTalk()">
+      <mat-icon>chat</mat-icon>
+      トーク
+    </button>
+  </div>
+  <div class="email">
+    <p>メールアドレス</p>
+    <div>{{user![0].email}}</div>
+  </div>
+</div>

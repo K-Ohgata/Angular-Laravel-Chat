@@ -1,0 +1,30 @@
+<div class="head">
+  <span>トーク</span>
+  <button mat-stroked-button color="primary" (click)="openDialog()">＋ 新規トーク</button>
+</div>
+<div class="body">
+  <mat-list *ngFor="let room of rooms" (click)="setRoomId(room.rid)" [class.selected]="room.rid === roomId">
+    <div class="listItem">
+      <div class="icon">
+        <mat-icon>group</mat-icon>
+      </div>
+      <div class="info">
+        <div class="upper">
+          {{room.name}}
+          <span *ngIf="room.numberOfPeople! > 2">（{{room.numberOfPeople}}）</span>
+          <div *ngIf="room.chat!.length !== 0" class="time">
+            {{room.chat!.slice(-1)[0].created_at | date:"MM/dd HH:mm"}}
+          </div>
+        </div>
+        <div *ngIf="room.chat!.length !== 0" class="lower">
+          {{room.chat!.slice(-1)[0].sentence}}
+          <div class="button" (click)="delRoom(room.id)">退会</div>
+        </div>
+        <div *ngIf="room.chat!.length === 0" class="lower">
+          <div class="button" (click)="delRoom(room.id)">退会</div>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>

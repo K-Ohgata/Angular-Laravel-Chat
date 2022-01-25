@@ -1,0 +1,16 @@
+<!-- <div>
+  <input type="text" placeholder="検索" />
+  <button>x</button>
+</div> -->
+<div class="body">
+<div class="makeGroup">
+  <button (click)="openDialog()" mat-stroked-button color="primary">＋ グループを作成</button>
+</div>
+  <mat-list *ngFor="let room of rooms" (click)="setRoomId(room.rid)">
+    <mat-list-item [class.selected]="room.rid === roomId">
+      <mat-icon>group</mat-icon>
+      <span>{{room.name}}</span>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</div>

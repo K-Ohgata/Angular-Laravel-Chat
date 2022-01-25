@@ -1,0 +1,78 @@
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin: 0 auto 0 10px;
+    font-size: larger;
+  }
+  button {
+    margin: 0 5px 0 0;
+  }
+}
+
+.body {
+  height: calc(100% - 50px);
+  overflow: auto;
+}
+
+mat-list {
+  padding: 0;
+  overflow: auto;
+  .listItem {
+    display: flex;
+    height: 50px;
+    padding: 10px 16px;
+    .icon {
+      display: flex;
+      align-items: center;
+      width: 30px;
+      mat-icon {
+        font-size: 30px;
+        padding: 0 0 3px 0;
+      }
+    }
+    .info {
+      padding: 5px 0 0 15px;
+      width: 100%;
+    }
+    .upper {
+      display: flex;
+      .time {
+        margin: 0 0 0 auto;
+        font-size: 12px;
+        color: rgb(176, 176, 176);
+      }
+    }
+    .lower {
+      display: flex;
+      color: rgb(176, 176, 176);
+      .button {
+        margin: 0 0 0 auto;
+        font-size: 12px;
+        color: rgb(176, 176, 176);
+        text-decoration:underline;
+        &:hover {
+          color:blue;
+          cursor: pointer;
+        }
+      }
+    }
+    &:hover {
+      background-color: rgb(230, 230, 230);
+    }
+  }
+}
+
+.selected {
+  position: relative;
+  background-color: rgb(229, 246, 253);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    border-left: 5px solid blue;
+  }
+}

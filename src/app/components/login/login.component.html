@@ -1,0 +1,27 @@
+<div class="container">
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title class="login-title">Angular Chat App</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="login-form">
+      <mat-form-field>
+        <input matInput placeholder="userName" id="userName" [(ngModel)]="name" name="userName" #userName="ngModel" required>
+        <mat-error *ngIf="userName.errors?.['required']">名前を入力して下さい</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="email" id="emailAddress" [(ngModel)]="email" name="emailAddress" #emailAddress="ngModel" required>
+        <mat-error *ngIf="emailAddress.errors?.['required'] && errorText.email === ''">メールアドレスを入力して下さい</mat-error>
+        <mat-error *ngIf="errorText.email !== ''">{{errorText.email}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input [type]="hide ? 'password' : 'text'" matInput placeholder="password" id="secret" [(ngModel)]="password" name="secret"
+          #secret="ngModel" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="secret.errors?.['required']">パスワードを入力して下さい</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+      <button mat-raised-button color="primary" (click)="signup()">新規登録はこちら</button>
+  </mat-card-content>
+</mat-card>
+</div>

@@ -1,0 +1,36 @@
+.makeGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    width:90%;
+    margin:5px 0 0 0;
+  }
+}
+
+.body {
+  height:calc(100% - 50px);
+  overflow: auto;
+}
+
+mat-list {
+  height:40px;
+  span {
+    padding-left:8px;
+  }
+  mat-list-item:hover {
+    background-color: rgb(230, 230, 230);
+  }
+}
+
+.selected {
+  position:relative;
+  background-color: rgb(229, 246, 253);
+  &::before {
+    content:"";
+    display:block;
+    position:absolute;
+    height:100%;
+    border-left: 5px solid blue;
+  }
+}

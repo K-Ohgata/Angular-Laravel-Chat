@@ -1,0 +1,13 @@
+<!-- <div>
+  <input type="text" placeholder="検索" />
+  <button>x</button>
+</div> -->
+<div class="body">
+  <mat-list *ngFor="let user of users" (click)="setUserId(user.id)">
+    <mat-list-item [class.selected]="user.id === userId">
+      <mat-icon>account_circle</mat-icon>
+      <span>{{user.name}}</span>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</div>

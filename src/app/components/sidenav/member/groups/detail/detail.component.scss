@@ -1,0 +1,35 @@
+mat-list {
+  height:40px;
+  mat-list-item {
+    font-size:18px;
+    span {
+      padding-left:8px;
+    }
+  }
+
+}
+.head {
+  display: flex;
+  align-items: center;
+  padding-left:20px;
+  font-size: larger;
+}
+.right-container {
+  padding:50px;
+  display:flex;
+  flex-flow: column;
+  // align-items: center;
+  justify-content: center;
+  .buttons {
+    margin:0 0 20px 0;
+    button {
+      margin:5px;
+    }
+    mat-icon {
+      margin:0 0 2px 0;
+    }
+  }
+  .member {
+    border-bottom: 1px solid rgb(196, 196, 196);
+  }
+}
